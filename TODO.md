@@ -1,5 +1,3 @@
-- Commit
-- Code commenting; commit
 - Documentation in README.md (merge TODO at the bottom); commit
 - Tests & commits
 - PR on brunch's plugins page
