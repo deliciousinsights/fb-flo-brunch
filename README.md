@@ -4,6 +4,8 @@
 [![Dependency status](https://david-dm.org/deliciousinsights/fb-flo-brunch.svg)](https://david-dm.org/deliciousinsights/fb-flo-brunch)
 [![Dev Dependency status](https://david-dm.org/deliciousinsights/fb-flo-brunch/dev-status.svg)](https://david-dm.org/deliciousinsights/fb-flo-brunch#info=devDependencies&view=table)
 
+[![NPM](https://nodei.co/npm/fb-flo-brunch.png)](https://nodei.co/npm/fb-flo-brunch/)
+
 ## Brunch?  fb-flo?  What?
 
 * **[Brunch](http://brunch.io)** is a kickass front-end app assets builder; basically it's what most people trod through the swamps of Grunt, Gulp or what-have-you for, only much, much better and far, far, simpler to use.
@@ -58,7 +60,6 @@ Check [LICENSE](LICENSE) for full details.
 
 ## To-Do
 
-- npm pad (nodei.co/npm/fb-flo-brunch)
 - Automated tests
 - PR on brunch's plugins page
 - Ping fb-flo team and Brunch team, tweep campaigns (porteneuve/jsattitude)
