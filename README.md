@@ -1,7 +1,7 @@
 # Dead-simple live injection of Brunch-built CSS/JS files in the browser
 
-TODO: deps status
-TODO: dev deps status
+[![Dependency status](https://david-dm.org/deliciousinsights/fb-flo-brunch.svg)](https://david-dm.org/deliciousinsights/fb-flo-brunch)
+[![Dev Dependency status](https://david-dm.org/deliciousinsights/fb-flo-brunch/dev-status.svg)](https://david-dm.org/deliciousinsights/fb-flo-brunch#info=devDependencies&view=table)
 
 ## Brunch?  fb-flo?  What?
 
