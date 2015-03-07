@@ -3,7 +3,8 @@
   "version": "1.7.20",
   "description": "A Brunch plugin that maintains an fb-flo server while the watcher runs",
   "scripts": {
-    "check": "jshint index.js && jscs index.js"
+    "check": "jshint index.js && jscs index.js",
+    "test": "npm run check"
   },
   "author": {
     "name": "Christophe Porteneuve",
