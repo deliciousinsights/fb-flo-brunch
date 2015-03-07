@@ -98,9 +98,11 @@ extend(FbFloBrunch.prototype, {
     // Allow for basic, fb-flo supported true/false values for the resolver's
     // `reload` setting, but also allow anymatch sets (way more flexible).
     if (this.config.resolverReload) {
-      this.config.resolverReload = true === this.config.resolverReload
-        ? function() { return true; }
-        : anymatch(this.config.resolverReload);
+      if (true === this.config.resolverReload) {
+        this.config.resolverReload = function alwaysReload() { return true; };
+      } else {
+        this.config.resolverReload = anymatch(this.config.resolverReload);
+      }
     }
 
     // If a client-side message is defined, build the `update` resolver method.
@@ -124,6 +126,7 @@ extend(FbFloBrunch.prototype, {
       var code = 'console.' + level + '("' + msg + '", ' + suffix + ');';
       // Closures won't marshal over to the browser, hence the autonomous
       // function code generation.
+      /* jshint evil:true */
       this.update = new Function('_window', '_resourceURL', code);
     }
   },

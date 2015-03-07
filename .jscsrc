@@ -1,0 +1,67 @@
+// JSCS settings for fb-flo-brunch.  Do not alter.
+{
+  // Functions (decls, exprs, parameters, calls & arguments)
+
+  "disallowAnonymousFunctions": true,
+  "requireParenthesesAroundIIFE": true,
+  "disallowSpacesInCallExpression": true,
+  "disallowSpacesInFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+  },
+  "requireSpacesInFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "disallowSpacesInFunctionDeclaration": {
+    "beforeOpeningRoundBrace": true
+  },
+  "requireSpacesInFunctionDeclaration": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "requireSpaceBetweenArguments": true,
+  "validateParameterSeparator": ", ",
+
+  // Expressions (unary/binary ops, type conversion, etc.)
+
+  "disallowImplicitTypeConversion": ["numeric", "boolean", "binary", "string"],
+  "disallowSpaceAfterPrefixUnaryOperators": true,
+  "disallowSpaceBeforePostfixUnaryOperators": true,
+  "requireSpaceAfterBinaryOperators": true,
+  "requireSpaceBeforeBinaryOperators": true,
+  "requireDotNotation": true,
+  "requireSpacesInConditionalExpression": true,
+  "disallowSpacesInsideParentheses": true,
+
+  // Literals
+
+  "disallowMultipleLineStrings": true,
+  "disallowSpaceAfterObjectKeys": true,
+  "disallowSpacesInsideArrayBrackets": true,
+  "disallowTrailingComma": true,
+  "requireSpaceBeforeObjectValues": true,
+  "requireSpacesInsideObjectBrackets": "allButNested",
+
+  // Control flow structures
+
+  "disallowEmptyBlocks": true,
+  "disallowNewlineBeforeBlockStatements": true,
+  "requireCommaBeforeLineBreak": true,
+  "requireCurlyBraces": true,
+  "requireSpaceAfterKeywords": true,
+  "requireSpaceBeforeBlockStatements": true,
+  "requireSpaceBeforeKeywords": true,
+  "requireSpacesInForStatement": true,
+
+  // Other whitespace and line feeds
+
+  "disallowMixedSpacesAndTabs": true,
+  "disallowMultipleLineBreaks": true,
+  "disallowTrailingWhitespace": true,
+  "requireLineFeedAtFileEnd": true,
+  "requireSpaceAfterLineComment": true,
+
+  // Miscellanea
+
+  "requireCamelCaseOrUpperCaseIdentifiers": true,
+  "requireCapitalizedConstructors": true,
+  "safeContextKeyword": ["that", "self"]
+}

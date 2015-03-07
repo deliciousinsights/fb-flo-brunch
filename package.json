@@ -2,6 +2,9 @@
   "name": "fb-flo-brunch",
   "version": "1.7.20",
   "description": "A Brunch plugin that maintains an fb-flo server while the watcher runs",
+  "scripts": {
+    "check": "jshint index.js && jscs index.js"
+  },
   "author": {
     "name": "Christophe Porteneuve",
     "email": "christophe@delicious-insights.com",
@@ -15,5 +18,9 @@
     "amp-pick": "^1.0.0",
     "anymatch": "^1.1.0",
     "fb-flo": "^0.4.0"
+  },
+  "devDependencies": {
+    "jscs": "^1.11.3",
+    "jshint": "^2.6.3"
   }
 }

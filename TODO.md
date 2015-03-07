@@ -1,4 +1,0 @@
-- Documentation in README.md (merge TODO at the bottom); commit
-- Tests & commits
-- PR on brunch's plugins page
-- Ping fb-flo team and Brunch team, tweep campaigns (porteneuve/jsattitude)

@@ -1,0 +1,22 @@
+// JSHint settings for fb-flo-brunch.  Do not alter.
+{
+  "curly": true,
+  "eqeqeq": true,
+  "forin": true,
+  "immed": true,
+  "maxdepth": 3,
+  "maxparams": 3,
+  "newcap": true,
+  "noarg": true,
+  "trailing": true,
+  "undef": true,
+  "unused": true,
+
+  "debug": true,
+  "eqnull": true,
+  "loopfunc": true,
+
+  "browser": true,
+  "devel": true,
+  "node": true
+}
