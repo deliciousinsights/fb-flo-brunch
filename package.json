@@ -1,0 +1,19 @@
+{
+  "name": "fb-flo-brunch",
+  "version": "1.7.20",
+  "description": "A Brunch plugin that maintains an fb-flo server while the watcher runs",
+  "author": {
+    "name": "Christophe Porteneuve",
+    "email": "christophe@delicious-insights.com",
+    "url": "http://tddsworld.com/"
+  },
+  "repository": "https://github.com/deliciousinsights/fb-flo-brunch.git",
+  "license": "MIT",
+  "dependencies": {
+    "amp-defaults": "^1.0.1",
+    "amp-extend": "^1.0.1",
+    "amp-pick": "^1.0.0",
+    "anymatch": "^1.1.0",
+    "fb-flo": "^0.4.0"
+  }
+}
