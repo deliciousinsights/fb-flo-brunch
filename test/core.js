@@ -22,7 +22,7 @@ describe('the plugin', function() {
   });
 
   beforeEach(function() {
-    flo = sinon.stub();
+    flo = sinon.stub().returns({ close: function() {} });
     Plugin = proxyquire('../index.js', { 'fb-flo': flo });
   });
 
@@ -164,6 +164,22 @@ describe('the plugin', function() {
         { foo: 'bar' },
         sinon.match.func
       );
+    });
+  });
+
+  describe('when starting the server', function() {
+    it('should not attempt to shutdown fb-flo if not started earlier', function() {
+      var obj = newWithConfig({ enabled: false });
+      chai.expect(obj._flo).to.be.undefined;
+      obj.teardown();
+    });
+
+    it('should shutdown fb-flo if started earlier', function() {
+      var obj = newWithConfig();
+      obj._flo.should.exist;
+      obj._flo.close = sinon.spy();
+      obj.teardown();
+      obj._flo.close.should.have.been.called;
     });
   });
 

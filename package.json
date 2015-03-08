@@ -5,7 +5,8 @@
   "scripts": {
     "check": "jshint index.js && jscs index.js",
     "test": "mocha && npm run check",
-    "testing": "mocha -w"
+    "testing": "mocha -w",
+    "test-cov": "istanbul cover _mocha"
   },
   "author": {
     "name": "Christophe Porteneuve",
@@ -23,11 +24,12 @@
   },
   "devDependencies": {
     "chai": "^2.1.1",
+    "istanbul": "^0.3.7",
     "jscs": "^1.11.3",
     "jshint": "^2.6.3",
     "mocha": "^2.2.0",
     "proxyquire": "^1.4.0",
     "sinon": "^1.13.0",
-    "sinon-chai": "^2.6.0"
+    "sinon-chai": "^2.7.0"
   }
 }
