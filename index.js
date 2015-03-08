@@ -123,7 +123,7 @@ extend(FbFloBrunch.prototype, {
         suffix.unshift('"color: ' + this.config.messageColor + '"');
       }
       suffix = suffix.join(', ');
-      var level = this.config.messageLevel || 'log';
+      var level = this.config.messageLevel;
       var code = 'console.' + level + '("' + msg + '", ' + suffix + ');';
       // Closures won't marshal over to the browser, hence the autonomous
       // function code generation.
