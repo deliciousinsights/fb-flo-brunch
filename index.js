@@ -33,14 +33,15 @@ function FbFloBrunch(config) {
 
 // These options are passed untouched to fb-flo.  See
 // https://github.com/facebook/fb-flo#1-configure-fb-flo-server for details.
-var FB_FLO_OPTIONS = ['host', 'pollingInterval', 'port',
-  'useFilePolling', 'useWatchman', 'verbose', 'watchDotFiles'];
+var FB_FLO_OPTIONS = FbFloBrunch.FB_FLO_OPTIONS = Object.freeze([
+  'host', 'pollingInterval', 'port',
+  'useFilePolling', 'useWatchman', 'verbose', 'watchDotFiles']);
 
 // This is a superset of options, including all plugin-specific options.
 // See https://deliciousinsights.github.io/fb-flo-brunch for details.
-var OPTIONS = FB_FLO_OPTIONS.concat(
+var OPTIONS = FbFloBrunch.OPTIONS = Object.freeze(FB_FLO_OPTIONS.concat(
   ['enabled', 'message', 'messageColor', 'messageLevel',
-   'messageResourceColor', 'resolverMatch', 'resolverReload']);
+   'messageResourceColor', 'resolverMatch', 'resolverReload']));
 
 // Default values for options.
 FbFloBrunch.DEFAULTS = {

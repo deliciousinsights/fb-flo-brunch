@@ -57,9 +57,3 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details and guidelines on how to help
 This work is MIT-licensed and © 2015 Christophe Porteneuve.
 
 Check [LICENSE](LICENSE) for full details.
-
-## To-Do
-
-- Automated tests
-- PR on brunch's plugins page
-- Ping fb-flo team and Brunch team, tweep campaigns (porteneuve/jsattitude)

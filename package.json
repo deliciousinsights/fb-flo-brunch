@@ -4,7 +4,8 @@
   "description": "A Brunch plugin that maintains an fb-flo server while the watcher runs",
   "scripts": {
     "check": "jshint index.js && jscs index.js",
-    "test": "npm run check"
+    "test": "mocha && npm run check",
+    "testing": "mocha -w"
   },
   "author": {
     "name": "Christophe Porteneuve",
@@ -21,7 +22,12 @@
     "fb-flo": "^0.4.0"
   },
   "devDependencies": {
+    "chai": "^2.1.1",
     "jscs": "^1.11.3",
-    "jshint": "^2.6.3"
+    "jshint": "^2.6.3",
+    "mocha": "^2.2.0",
+    "proxyquire": "^1.4.0",
+    "sinon": "^1.13.0",
+    "sinon-chai": "^2.6.0"
   }
 }
