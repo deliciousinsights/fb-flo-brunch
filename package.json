@@ -1,6 +1,6 @@
 {
   "name": "fb-flo-brunch",
-  "version": "1.7.21",
+  "version": "1.7.22",
   "description": "A Brunch plugin that maintains an fb-flo server while the watcher runs",
   "scripts": {
     "check": "jshint index.js && jscs index.js",
