@@ -4,6 +4,7 @@
 [![Dependency status](https://david-dm.org/deliciousinsights/fb-flo-brunch.svg)](https://david-dm.org/deliciousinsights/fb-flo-brunch)
 [![Dev Dependency status](https://david-dm.org/deliciousinsights/fb-flo-brunch/dev-status.svg)](https://david-dm.org/deliciousinsights/fb-flo-brunch#info=devDependencies&view=table)
 [![Code Climate](https://codeclimate.com/github/deliciousinsights/fb-flo-brunch/badges/gpa.svg)](https://codeclimate.com/github/deliciousinsights/fb-flo-brunch)
+[![Test Coverage](https://codeclimate.com/github/deliciousinsights/fb-flo-brunch/badges/coverage.svg)](https://codeclimate.com/github/deliciousinsights/fb-flo-brunch)
 
 [![NPM](https://nodei.co/npm/fb-flo-brunch.png)](https://nodei.co/npm/fb-flo-brunch/)
 
