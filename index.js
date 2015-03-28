@@ -142,7 +142,7 @@ extend(FbFloBrunch.prototype, {
       // (all JS/CSS, at any depth) inside the watched path.
       extend(
         pick(this.config, FB_FLO_OPTIONS),
-        { glob: ['**/*.js', '**/*.css'] }
+        { glob: this.config.glob | ['**/*.js', '**/*.css'] }
       ),
       // Our resolver method (it was properly bound upon construction).
       this.resolver
