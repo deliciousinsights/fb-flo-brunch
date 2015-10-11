@@ -149,6 +149,15 @@ extend(FbFloBrunch.prototype, {
     );
   },
 
+  // Directly hook into fb-flo on compile
+  onCompile: function(generatedFiles) {
+    for (var idx = 0; idx < generatedFiles.length; ++idx) {
+      this._flo.onFileChange(
+        path.relative(this.config.publicPath, generatedFiles[idx].path)
+      );
+    }
+  },
+
   // Stops the fb-flo server when Brunch shuts down.
   teardown: function tearDownFbFlo() {
     // If the plugin was disabled, we didn't start the server, so check.
