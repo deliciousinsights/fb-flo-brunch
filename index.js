@@ -41,7 +41,8 @@ var FB_FLO_OPTIONS = FbFloBrunch.FB_FLO_OPTIONS = Object.freeze([
 // See https://deliciousinsights.github.io/fb-flo-brunch for details.
 var OPTIONS = FbFloBrunch.OPTIONS = Object.freeze(FB_FLO_OPTIONS.concat(
   ['enabled', 'message', 'messageColor', 'messageLevel',
-   'messageResourceColor', 'resolverMatch', 'resolverReload']));
+   'messageResourceColor', 'resolverMatch', 'resolverReload',
+   'fuzzyMatch']));
 
 // Default values for options.
 FbFloBrunch.DEFAULTS = {
@@ -61,17 +62,34 @@ extend(FbFloBrunch.prototype, {
   // notification to connected browser extensions.
   resolver: function resolver(filePath, callback) {
     var fullPath = path.join(this.config.publicPath, filePath);
+    var contents = fs.readFileSync(fullPath).toString();
+    var resourcePath;
+
     var options = {
-      resourceURL: filePath,
-      contents: fs.readFileSync(fullPath).toString()
+      contents: contents
     };
+    if (this.config.fuzzyMatch) {
+      var ext = path.extname(filePath);
+      var dir = path.dirname(filePath);
+      if ('.' === dir) {
+        dir = '';
+      } else {
+        dir = path.joih(dir, '');
+      }
+      options.match = new RegExp(dir + '.*' +
+                      path.basename(filePath, ext) + '.*\\' + ext);
+      resourcePath = filePath;
+    } else {
+      resourcePath = filePath;
+    }
+    options.resourceURL = resourcePath;
 
     // If we defined a custom browser-side message system, use it.
     if (this.update) {
       options.update = this.update;
     }
     // If we specified a `match` option for fb-flo notifications, use it.
-    if (this.config.resolverMatch) {
+    if (this.config.resolverMatch && !this.config.fuzzyMatch) {
       options.match = this.config.resolverMatch;
     }
     // If we defined an advanced reload mechanism (fb-flo only has true/false,
