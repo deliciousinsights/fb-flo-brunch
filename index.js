@@ -136,8 +136,7 @@ extend(FbFloBrunch.prototype, {
   // plugin is disabled.
   startServer: function startServer() {
     this._flo = flo(
-      // The path to watch (see `setOptions(…)`).
-      this.config.publicPath,
+      null, // do not watch, use onCompile only (triggers faster)
       // The config-provided fb-flo options + a generic watch glob
       // (all JS/CSS, at any depth) inside the watched path.
       extend(
