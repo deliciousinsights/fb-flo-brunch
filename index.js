@@ -74,7 +74,7 @@ extend(FbFloBrunch.prototype, {
       if ('.' === dir) {
         dir = '';
       } else {
-        dir = path.joih(dir, '');
+        dir = path.join(dir, '');
       }
       options.match = new RegExp(dir + '.*' +
                       path.basename(filePath, ext) + '.*\\' + ext);
