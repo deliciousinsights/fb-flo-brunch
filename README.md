@@ -43,6 +43,7 @@ In the table below, the “fb-flo?” column states whether this is just an fb-f
 | `port`    | server | What port to listen to | 8888 |
 | `resolverMatch` | resolver (`match`) | *see fb-flo* | *see fb-flo* |
 | `resolverReload` | resolver (`reload`) | Extends fb-flo's boolean-only values with [anymatch sets](https://www.npmjs.com/package/anymatch), allowing for tremendous flexibility | `false` |
+| `fuzzyMatch` | resolver | Fuzzy match to cater for resources with hashes in URL | `false` |
 | `useFilePolling` | server | *see fb-flo* | *see fb-flo* |
 | `useWatchman` | server | *see fb-flo* | *see fb-flo* |
 | `verbose` | server | Whether to output everything on the wire… | `false` |

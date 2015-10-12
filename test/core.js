@@ -248,6 +248,19 @@ describe('the plugin', function() {
         reload: true
       });
     });
+
+    it('should pass the proper regex if fuzzyMatch is set', function() {
+      var obj = new Plugin({
+        paths: { public: publicPath },
+        plugins: { fbFlo: { fuzzyMatch: true } }
+      });
+      var spy = sinon.spy();
+      var expectedRE = new RegExp('.*foo.*\\.js');
+      obj.resolver(fileName, spy);
+      spy.should.have.been.calledWithMatch({
+        match: expectedRE
+      });
+    });
   });
 
   function callWithConfig() {
