@@ -35,7 +35,8 @@ function FbFloBrunch(config) {
 // https://github.com/facebook/fb-flo#1-configure-fb-flo-server for details.
 var FB_FLO_OPTIONS = FbFloBrunch.FB_FLO_OPTIONS = Object.freeze([
   'host', 'pollingInterval', 'port',
-  'useFilePolling', 'useWatchman', 'verbose', 'watchDotFiles']);
+  'useFilePolling', 'useWatchman', 'verbose', 'watchDotFiles',
+  'disableWatcher']);
 
 // This is a superset of options, including all plugin-specific options.
 // See https://deliciousinsights.github.io/fb-flo-brunch for details.
@@ -50,7 +51,10 @@ FbFloBrunch.DEFAULTS = {
   message:      '%s has just been updated with new content',
   // The console level at which to output the message.  Can be any valid
   // console method, but will usually be one of `log`, `info`, or `debug`.
-  messageLevel: 'log'
+  messageLevel: 'log',
+  // we disable the builtin watcher and trigger on onCompile but allow
+  // to reset to using fb-flo's watcher instead
+  disableWatcher: true
 };
 
 extend(FbFloBrunch.prototype, {
@@ -136,7 +140,8 @@ extend(FbFloBrunch.prototype, {
   // plugin is disabled.
   startServer: function startServer() {
     this._flo = flo(
-      null, // do not watch, use onCompile only (triggers faster)
+      // The path to watch (see `setOptions(…)`).
+      this.config.publicPath,
       // The config-provided fb-flo options + a generic watch glob
       // (all JS/CSS, at any depth) inside the watched path.
       extend(
@@ -148,14 +153,14 @@ extend(FbFloBrunch.prototype, {
     );
   },
 
-  // Directly hook into fb-flo on compile
-  onCompile: function(generatedFiles) {
+  // Directly hook into fb-flo on compile if not using fb-flo's watcher
+  onCompile: this.config.disableWatcher ? function(generatedFiles) {
     for (var idx = 0; idx < generatedFiles.length; ++idx) {
       this._flo.onFileChange(
         path.relative(this.config.publicPath, generatedFiles[idx].path)
       );
     }
-  },
+  } : undefined,
 
   // Stops the fb-flo server when Brunch shuts down.
   teardown: function tearDownFbFlo() {
