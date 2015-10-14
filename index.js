@@ -27,6 +27,15 @@ function FbFloBrunch(config) {
     return;
   }
 
+  // Directly hook into fb-flo on compile if not using fb-flo's watcher
+  this.onCompile = this.config.disableWatcher ? function(generatedFiles) {
+    for (var idx = 0; idx < generatedFiles.length; ++idx) {
+      this._flo.onFileChange(
+        path.relative(this.config.publicPath, generatedFiles[idx].path)
+      );
+    }
+  } : undefined;
+
   this.resolver = this.resolver.bind(this);
   this.startServer();
 }
@@ -152,15 +161,6 @@ extend(FbFloBrunch.prototype, {
       this.resolver
     );
   },
-
-  // Directly hook into fb-flo on compile if not using fb-flo's watcher
-  onCompile: this.config.disableWatcher ? function(generatedFiles) {
-    for (var idx = 0; idx < generatedFiles.length; ++idx) {
-      this._flo.onFileChange(
-        path.relative(this.config.publicPath, generatedFiles[idx].path)
-      );
-    }
-  } : undefined,
 
   // Stops the fb-flo server when Brunch shuts down.
   teardown: function tearDownFbFlo() {
