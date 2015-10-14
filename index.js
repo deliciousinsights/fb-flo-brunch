@@ -28,13 +28,15 @@ function FbFloBrunch(config) {
   }
 
   // Directly hook into fb-flo on compile if not using fb-flo's watcher
-  this.onCompile = this.config.disableWatcher ? function(generatedFiles) {
-    for (var idx = 0; idx < generatedFiles.length; ++idx) {
-      this._flo.onFileChange(
-        path.relative(this.config.publicPath, generatedFiles[idx].path)
-      );
-    }
-  } : undefined;
+  if (this.config.disableWatcher) {
+    this.onCompile = function onCompile(generatedFiles) {
+      for (var idx = 0; idx < generatedFiles.length; ++idx) {
+        this._flo.onFileChange(
+          path.relative(this.config.publicPath, generatedFiles[idx].path)
+        );
+      }
+    };
+  }
 
   this.resolver = this.resolver.bind(this);
   this.startServer();
